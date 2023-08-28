@@ -17,9 +17,12 @@ export default async function decorate(block) {
 
     // decorate footer DOM
     const footer = document.createElement('div');
+    let img = document.createElement('img');
+    img.src ='../../icons/zfnb.svg';
     footer.innerHTML = html;
 
     decorateIcons(footer);
+    footer.prepend(img);
     block.append(footer);
   }
 }

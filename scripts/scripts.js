@@ -30,6 +30,18 @@ function buildHeroBlock(main) {
   }
 }
 
+
+// auto block build for Social Icons and share
+function buildBlogLeftNavBlock(main) {
+  //if (getMetadata('template') === 'Blog Article') {
+    const section = document.createElement('div');
+    section.append(buildBlock('social', {
+      elems: [],
+    }));
+    main.prepend(section);
+  //}
+}
+
 /**
  * load fonts.css and set a session storage flag
  */
@@ -67,6 +79,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  buildBlogLeftNavBlock(main);
 }
 
 /**
